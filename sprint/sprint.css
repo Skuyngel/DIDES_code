@@ -57,15 +57,15 @@ body {
 }
 
 #orange {
-    background-image: url(assets/orange.png);
+    background-image: url(assets/orange-min.png);
 }
 
 #purple {
-    background-image: url(assets/purple.png);
+    background-image: url(assets/purple-min.png);
 }
 
 #grey {
-    background-image: url(assets/grey.png);
+    background-image: url(assets/grey-min.png);
 }
 
 #content {

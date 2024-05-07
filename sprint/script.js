@@ -1,6 +1,7 @@
 let currentStar = 0;
 let filled = false;
 let pressed = false;
+let done = false;
 let desktop = false;
 if (window.screen.width > 828) {
     desktop = true
@@ -48,19 +49,26 @@ function releaseButton() {
     clearInterval(interval);
     document.getElementById("pulse").style.display = "none";
     if (filled) {
-        document.getElementById("purple").style.opacity = "0";
-        document.getElementById("purple").style.transition = "opacity 1s";
-        document.getElementById("holdbutton").style.background = "none";
-        document.getElementById("pulse").style.display = "none";
-        document.getElementById("txt").innerText = "";
-        document.getElementById("title").innerText = "HAPPINESS";
-        animateStars();
-        setTimeout(function () {
-            document.getElementById("title").innerText = "NOSEDIVE";
-            document.getElementById("title").style.fontSize = "2em";
-            document.getElementById("txt").innerText = "Black Mirror\nSeason 3, Episode 1\ndirected by Joe Wright";
-            document.getElementById("txt").style.color = "#F6F6F6";
-        }, 3000);
+        if (!done) {
+            done = true;
+            document.getElementById("purple").style.opacity = "0";
+            document.getElementById("purple").style.transition = "opacity 1s";
+            document.getElementById("holdbutton").style.background = "none";
+            document.getElementById("pulse").style.display = "none";
+            document.getElementById("txt").innerText = "";
+            document.getElementById("title").innerText = "HAPPINESS";
+            animateStars();
+            setTimeout(function () {
+                document.getElementById("title").innerText = "NOSEDIVE";
+                document.getElementById("title").style.fontSize = "2em";
+                document.getElementById("txt").innerText = "Black Mirror\nSeason 3, Episode 1\ndirected by Joe Wright";
+                document.getElementById("txt").style.color = "#F6F6F6";
+
+                document.addEventListener('click', function () {
+                    window.location.reload();
+                });
+            }, 3000);
+        }
     } else {
         document.getElementById("orange").style.opacity = "1";
         document.getElementById("orange").style.transition = "opacity 1s";
@@ -69,12 +77,11 @@ function releaseButton() {
 
 function fillStar() {
     if (currentStar >= stars.length || filled) {
-        filled = true;
         clearInterval(interval)
         //five stars filled
     } else {
-        stars[currentStar].style.fill = "#B9DFB8"; //#EAFFEA
-        stars[currentStar].style.filter = "drop-shadow(0px 0px 20px #F6F6F6)";
+        stars[currentStar].style.fill = "#B9DFB8";
+        //stars[currentStar].style.filter = "drop-shadow(0px 0px 20px #EAFFEA)";
         currentStar++;
     }
     if (currentStar >= stars.length) {
