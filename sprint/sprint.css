@@ -32,8 +32,25 @@
     margin-bottom: 100px;
 }
 
-#text{
-   height: 30px;
+@keyframes shrink {
+    0%, 100% {
+        transform: scale(0.9);
+    }
+}
+
+#pulse {
+    align-self: center;
+    width: 100px;
+    height: 100px;
+    display: block;
+    background: none;
+    border-radius: 50%;
+    margin-bottom: 100px;
+    animation: pulse 2s infinite;
+}
+
+#text {
+    height: 30px;
 }
 
 
@@ -48,7 +65,7 @@
 
 .star {
     fill: white;
-    stroke: #476DB2;
+    stroke: none;
     width: 19.8;
     height: 18.8;
     margin: 10px;
@@ -60,4 +77,14 @@
         filter: blur(5px);
     }
 
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1.5);
+    }
+
+    50% {
+        transform: scale(1.8);
+    }
 }
