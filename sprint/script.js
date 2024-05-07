@@ -36,7 +36,9 @@ function pressButton() {
         document.getElementById("orange").style.opacity = "0";
         document.getElementById("orange").style.transition = "opacity 1s";
         document.getElementById("holdbutton").style.animation = "shrink 0.5s infinite";
-        document.getElementById("pulse").style.display = "block";
+        if (!desktop) {
+            document.getElementById("pulse").style.display = "block";
+        }
         document.getElementById("txt").innerText = "In this world so caught up in our own shit, let’s not forget what matters.";
     }
 }
