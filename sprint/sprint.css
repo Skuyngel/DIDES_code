@@ -1,5 +1,11 @@
 * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
     user-select: none;
+}
+
+body {
+    overflow: hidden;
 }
 
 .quicksand {
@@ -140,5 +146,16 @@
     0%,
     100% {
         transform: scale(0.9);
+    }
+}
+
+@keyframes fall {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100vh);
     }
 }

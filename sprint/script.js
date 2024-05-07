@@ -54,6 +54,7 @@ function releaseButton() {
         document.getElementById("pulse").style.display = "none";
         document.getElementById("txt").innerText = "";
         document.getElementById("title").innerText = "HAPPINESS";
+        animateStars();
         setTimeout(function () {
             document.getElementById("title").innerText = "NOSEDIVE";
             document.getElementById("title").style.fontSize = "2em";
@@ -73,10 +74,21 @@ function fillStar() {
         //five stars filled
     } else {
         stars[currentStar].style.fill = "#B9DFB8"; //#EAFFEA
-        stars[currentStar].style.filter = "drop-shadow(0px 0px 20px white)";
+        stars[currentStar].style.filter = "drop-shadow(0px 0px 20px #F6F6F6)";
         currentStar++;
     }
     if (currentStar >= stars.length) {
         filled = true;
+    }
+}
+
+function animateStars() {
+    for (let i = 0; i < stars.length; i++) {
+        setTimeout(function () {
+            stars[i].style.animation = "fall 1s linear forwards";
+            stars[i].addEventListener('animationend', function() {
+                stars[i].style.background = "none";
+            });
+        }, Math.random() * 1000);
     }
 }
