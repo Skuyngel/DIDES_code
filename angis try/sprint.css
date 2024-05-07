@@ -1,0 +1,102 @@
+#background {
+    /* peenk */
+    background: radial-gradient(#FFDBD6, #FFB1A6);
+    /* Set background color */
+    height: 100vh;
+    /* Set height to fill the entire viewport */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+}
+
+/* text when hold*/
+#background ::after{
+/* porpal */
+background: radial-gradient(72.61% 62.61% at 50% 50%, #F7C8FF 0%, #9E87DF 100%);
+ /* Set background color */
+ height: 100vh;
+ /* Set height to fill the entire viewport */
+ margin: 0;
+ /* Remove default margin */
+ padding: 0;
+ /* Remove default padding */
+}
+
+#content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-end;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    background-size: contain !important;
+}
+
+#holdbutton {
+    width: 100px;
+    height: 100px;
+    display: block;
+    background: none;
+    border-radius: 50%;
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+#text{
+   height: 30px;
+}
+
+/* text when hold*/
+#quote{
+    height: 137px;
+ }
+
+.stars-container {
+    width: 90vw;
+    left: 5vw;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.star {
+    fill: white;
+    stroke: #476DB2;
+    width: 19.8;
+    height: 18.8;
+    margin: 10px;
+    animation: falling 3s step-end 5s 1 ease-in;
+}
+
+@media only screen and (max-width: 390px) {
+    #holdbutton {
+        background: radial-gradient(50% 50% at 50% 50%, #FFDDED 0%, #FFA9D3 50%, #FFD1E7 100%);
+        filter: blur(5px);
+    }
+
+}
+
+@media only screen and (min-width: 391px) {
+    #holdbutton {
+        display: block;
+    }
+
+    #text {
+        display: block;
+    }
+
+}
+
+@keyframes falling {
+    0%{
+        transform: translate();
+    }
+
+    100%{
+        transform: translateY(100px);
+    }
+}
